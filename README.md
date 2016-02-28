@@ -17,7 +17,8 @@ git clone https://github.com/Pebody/aws_agent
 TBA
 
 ## Configuration:
- - Configure AWS CLI
+ - Configure AWS CLI:
+
 http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html
  - Edit profile.ini file using the example provided
 
