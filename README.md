@@ -15,7 +15,7 @@ Complete following steps (in Terminal):
 pip3 install boto3 awscli pytz
 git clone https://github.com/Pebody/aws_agent
 ```
-
+Check official installation guides for the details ([this](http://docs.aws.amazon.com/cli/latest/userguide/installing.html) and [this](http://boto3.readthedocs.org/en/latest/guide/quickstart.html))
 
 ## Installation (Windows):
 TBA
@@ -23,7 +23,7 @@ TBA
 
 ## Configuration:
  - [Configure AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)
- - Edit profile.ini file using the example provided
+ - Edit `profile.ini` file using the example provided
 
 
 ## Usage:
