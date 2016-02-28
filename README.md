@@ -10,7 +10,7 @@ Simple AWS EC2 Spot Instance manager
 
 
 ## Installation (Linux, OS X):
- - Complete following steps (in Terminal)
+Complete following steps (in Terminal)
 ```bash
 pip3 install boto3 awscli pytz
 git clone https://github.com/Pebody/aws_agent
