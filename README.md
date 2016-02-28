@@ -13,10 +13,10 @@ pip3 install boto3 awscli pytz
 git clone https://github.com/Pebody/aws_agent
 ```
 
-## Installation (Windows)
+## Installation (Windows):
 TBA
 
-## Configuration
+## Configuration:
 TBA
 
 ## Usage:
