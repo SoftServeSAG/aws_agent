@@ -23,7 +23,7 @@ TBA
 
 ## Configuration:
  - [Configure AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)
- - Edit profile.ini file using the example provided
+ - Edit *profile.ini* file using the example provided
 
 
 ## Usage:
