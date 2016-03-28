@@ -38,6 +38,9 @@ if __name__ == '__main__':
         force = input('Force detachment (y/n): ')
         aws_client.detach_volume(volume_id, True if force == 'y' else False)
 
+    elif options.subparser_name == 'deleteVolume':
+        aws_client.delete_volume(options.id)
+
     elif options.subparser_name == 'rebootInstances':
         aws_client.reboot_instances(options.id)
 

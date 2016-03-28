@@ -55,10 +55,14 @@ def get_argparser():
                           help='show block device volumes')
 
     subparsers.add_parser('attachVolume', formatter_class=Formatter,
-                          help='Attach a block device to an instance')
+                          help='attach a block device to an instance')
 
     subparsers.add_parser('detachVolume', formatter_class=Formatter,
-                          help='Detach a block device from an instance')
+                          help='detach a block device from an instance')
+
+    delete_volume = subparsers.add_parser(
+        'deleteVolume', formatter_class=Formatter, help='permanently delete block device volume')
+    delete_volume.add_argument('id', help='volume id to delete')
 
     subparsers.add_parser('printPriceHistory', formatter_class=Formatter,
                           help='print price history statistics')
