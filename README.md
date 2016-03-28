@@ -2,6 +2,10 @@
 Simple AWS EC2 Spot Instance manager
 
 
+## Features:
+TBA
+
+
 ## Prerequisites:
  - Python 3.4+
  - AWS Command Line Interface (CLI)
