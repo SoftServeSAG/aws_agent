@@ -47,9 +47,6 @@ if __name__ == '__main__':
     elif options.subparser_name == 'terminateInstances':
         aws_client.terminate_instances(options.id)
 
-    elif options.subparser_name == 'terminateAllInstances':
-        aws_client.terminate_all_instances()
-
     elif options.subparser_name == 'printPriceHistory':
         profile = input('Enter profile name: ')
         zone = input('Enter availability zone name (default: all): ')
@@ -93,17 +90,20 @@ if __name__ == '__main__':
         profile = input('Enter profile name: ')
         instance_count = input('Enter number of instances to request: ')
         valid_hours = input('Enter expiration time in hours (default: permanent): ')
-        if len(valid_hours) > 0:
-            kwargs['valid_hours'] = valid_hours
         # Get recommended pricing and resource allocation options
         availability_zones = aws_client.get_availability_zones()
         price_history = aws_client.get_price_history(profile, availability_zones)
         zone, price = utils.get_recommended_pricing(price_history)
         # Request spot instance(s)
+        kwargs = {'profile': profile,
+                  'availability_zone': zone,
+                  'price': price,
+                  'instance_count': instance_count}
+        if len(valid_hours) > 0:
+            kwargs['valid_hours'] = valid_hours
         print("Creating {} Spot request(s) in zone '{}' and bidding price {:<.2}".format(
             instance_count, zone, price))
-        response = aws_client.request_spot_instances(
-            profile, zone, price, instance_count, valid_hours)
+        response = aws_client.request_spot_instances(**kwargs)
 
     else:
         parser.print_usage()

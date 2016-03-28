@@ -92,9 +92,6 @@ def get_argparser():
         'terminateInstances', formatter_class=Formatter, help='terminate specified instance(s), spot requests will be closed resp')
     terminate_instances_parser.add_argument('id', nargs='+', help='instance ID(s)')
 
-    subparsers.add_parser('terminateAllInstances', formatter_class=Formatter,
-                          help='terminate all instances, spot requests will be closed resp')
-
     return parser
 
 

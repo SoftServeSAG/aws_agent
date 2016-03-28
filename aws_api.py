@@ -243,18 +243,6 @@ class Client:
             print('{}: {}'.format(instance['InstanceId'], instance['CurrentState']['Name']))
         return response
 
-    # http://boto3.readthedocs.org/en/latest/reference/services/ec2.html#EC2.Client.describe_instances
-    # http://boto3.readthedocs.org/en/latest/reference/services/ec2.html#EC2.Client.terminate_instances
-    def terminate_all_instances(self):
-        response = self.safe_api_call(self.ec2.describe_instances, {
-                                      'Filters': self.get_user_filter()})
-        all_instances = []
-        for reservation in response['Reservations']:
-            for instance in reservation['Instances']:
-                all_instances.append(instance['InstanceId'])
-        response = self.terminate_instances(all_instances)
-        return response
-
     # http://boto3.readthedocs.org/en/latest/reference/services/ec2.html#EC2.Client.reboot_instances
     def reboot_instances(self, instance_ids):
         response = self.safe_api_call(self.ec2.reboot_instances, {'InstanceIds': instance_ids})
