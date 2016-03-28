@@ -2,37 +2,37 @@
   "user_profile": {
     "tags": [{
       "Key": "User",
-      "Value": "imilov"
+      "Value": "YOUR_USER_NAME"
     }, {
       "Key": "Group",
-      "Value": "DSG"
+      "Value": "YOUR_GROUP_NAME"
     }]
   },
   "instance_profiles": {
     "GPU_SMALL": {
       "Description": "Small GPU instance",
-      "image_id": "ami-79323b13",
+      "image_id": "ami-fce3c696",
       "instance_type": "g2.2xlarge",
       "product": "Linux/UNIX",
       "security_group_name": "default",
-      "security_group_id": "sg-0f6c0c6a",
-      "key_name": "imilov_nv_1",
+      "security_group_id": "sg-12345678",
+      "key_name": "SSH_KEY",
       "tags": [{
         "Key": "Name",
-        "Value": "DSG_GPU_SMALL"
+        "Value": "GPU_SMALL"
       }]
     },
     "GPU_BIG": {
       "description": "Big GPU instance",
-      "image_id": "ami-79323b13",
+      "image_id": "ami-fce3c696",
       "instance_type": "g2.8xlarge",
       "product": "Linux/UNIX",
       "security_group_name": "default",
-      "security_group_id": "sg-0f6c0c6a",
-      "key_name": "imilov",
+      "security_group_id": "sg-12345678",
+      "key_name": "SSH_KEY",
       "tags": [{
         "Key": "Name",
-        "Value": "DSG_GPU_BIG"
+        "Value": "GPU_BIG"
       }]
     }
   }
