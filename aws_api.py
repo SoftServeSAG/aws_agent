@@ -144,6 +144,10 @@ class Client:
         print('State: {}'.format(response['State']))
         return response
 
+    # http://boto3.readthedocs.org/en/latest/reference/services/ec2.html#EC2.Client.delete_volume
+    def delete_volume(self, volume_id):
+        return self.safe_api_call(self.ec2.delete_volume, {'VolumeId': volume_id})
+
     # http://boto3.readthedocs.org/en/latest/reference/services/ec2.html#EC2.Client.describe_spot_price_history
     def get_price_history(self, profile, availability_zones, time_delta_days=7):
         instance_type = self.inst_profiles[profile]['instance_type']
